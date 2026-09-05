@@ -48,46 +48,6 @@
         style="display:none;visibility:hidden">
       </iframe>
     </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    {{ $saltVimeo := "" }}
-    {{ if .Params.vimeo }}
-      {{ $saltVimeo = partial "funcEncodeValue" (dict "value" .Params.vimeo "path" .RelPermalink) }}
-    {{ end }}
-    {{ $ytEncode := .Params.youtube | base64Encode }}
-
-    <global-data 
-    permalink="{{ .Permalink }}" 
-    vimeo="{{ $saltVimeo }}"
-    youtube="{{ $ytEncode }}"
-    free="{{ .Params.free }}"
-    next="{{with .PrevInSection}}{{.Permalink}}{{end}}" 
-    prev="{{with .NextInSection}}{{.Permalink}}{{end}}">
-  </global-data>
-
-    {{ block "header" . }}
-    <!-- navbar -->
-    {{ end }}
-    {{ block "main" . }}
-      <!-- main -->
-    {{ end }}
-    {{ block "footer" . }}
-      <!-- footer -->
-    {{ end }}
-
-
-    <app-signin></app-signin>
-    <algolia-search></algolia-search>
-    <hi-mom></hi-mom>
-
-    <email-handler></email-handler>
-
-    <route-loader>
-      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
-    </route-loader>
-
-    <toast-message></toast-message>
-    <scroll-up></scroll-up>
 
     </div>
     <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TxUeyM'></script>

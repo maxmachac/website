@@ -1,6 +1,6 @@
 baseURL = 'https://fireship.io/'
 languageCode = 'en-us'
-title = 'Fireship'
+title = 'maxblog'
 enableRobotsTXT = true
 
 [outputs]
@@ -49,3 +49,27 @@ unsafe= true
     noHl = false
     style = 'monokai'
     tabWidth = 4
+
+[security]
+  allowContent = ["text/html"]
+  enableInlineShortcodes = false
+
+  [security.exec]
+    allow = ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^postcss$']
+    osEnv = ['(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|(XDG_CONFIG_)?HOME|USERPROFILE|SSH_AUTH_SOCK|DISPLAY|LANG|SYSTEMDRIVE|PROGRAMDATA)$']
+
+  [security.funcs]
+    getenv = ['^HUGO_', '^CI$']
+
+  [security.http]
+    methods = ['(?i)GET|POST']
+    urls = ['(?i)^https?://[a-z0-9]', '! ^https?://\d+\.', '! (?i)localhost', '! (?i)^https?://[^/?#]*@']
+
+  [security.node]
+    [security.node.permissions]
+      allowAddons = ['tailwindcss']
+      allowChildProcess = ['tailwindcss']
+      allowRead = ['.']
+      allowWorker = ['tailwindcss']
+      allowWrite = []
+      disable = false
