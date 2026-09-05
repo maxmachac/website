@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head data-build="{{ .Site.Data.svelte.token }}">
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MD4CKRS5');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+
+    {{- $title := partial "title" . -}}
+    <title>{{ $title }}</title>
+
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/svelte/{{ .Site.Data.svelte.css }}" />
+    <script type="module" defer src="/svelte/{{ .Site.Data.svelte.js }}" /></script>
+
+    <!-- pwa -->
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <meta name="theme-color" content="#454e56">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="google-site-verification" content="_5hRPKIH1p5wVuCARFwrx1gaayOye8P6EZV8cNmiu5I" />
+    <link rel="manifest" href="/manifest.json">
+    {{ partial "meta" . }}
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+          });
+      }
+    </script>
+
+
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD4CKRS5" height="0" width="0"
+        style="display:none;visibility:hidden">
+      </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {{ $saltVimeo := "" }}
+    {{ if .Params.vimeo }}
+      {{ $saltVimeo = partial "funcEncodeValue" (dict "value" .Params.vimeo "path" .RelPermalink) }}
+    {{ end }}
+    {{ $ytEncode := .Params.youtube | base64Encode }}
+
+    <global-data 
+    permalink="{{ .Permalink }}" 
+    vimeo="{{ $saltVimeo }}"
+    youtube="{{ $ytEncode }}"
+    free="{{ .Params.free }}"
+    next="{{with .PrevInSection}}{{.Permalink}}{{end}}" 
+    prev="{{with .NextInSection}}{{.Permalink}}{{end}}">
+  </global-data>
+
+    {{ block "header" . }}
+    <!-- navbar -->
+    {{ end }}
+    {{ block "main" . }}
+      <!-- main -->
+    {{ end }}
+    {{ block "footer" . }}
+      <!-- footer -->
+    {{ end }}
+
+
+    <app-signin></app-signin>
+    <algolia-search></algolia-search>
+    <hi-mom></hi-mom>
+
+    <email-handler></email-handler>
+
+    <route-loader>
+      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+    </route-loader>
+
+    <toast-message></toast-message>
+    <scroll-up></scroll-up>
+
+    </div>
+    <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TxUeyM'></script>
+  </body>
+</html>
