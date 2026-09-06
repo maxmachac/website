@@ -11,8 +11,7 @@
       "vbuild": "vite build",
       "build": "vite build && hugo",
       "preview": "vite preview",
-      "check": "svelte-check --tsconfig ./tsconfig.json",
-      "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" --only hosting"
+      "check": "svelte-check --tsconfig ./tsconfig.json"
     },
     "keywords": [],
     "author": "Max Machac",
