@@ -11,7 +11,7 @@
       "vbuild": "vite build",
       "build": "vite build && hugo",
       "preview": "vite preview",
-      "check": "svelte-check --tsconfig ./tsconfig.json",
+      "check": "svelte-check --tsconfig ./tsconfig.json"
     },
     "keywords": [],
     "author": "Max Machac",
