@@ -1,4 +1,4 @@
-name: Deploy to Firebase Hosting
+name: Deploy
 
 on:
   push:
@@ -6,13 +6,6 @@ on:
       - master
 
 env:
-  FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}
-  ALGOLIA_APP_ID: 05VYZFXKNM 
-  ALGOLIA_ADMIN_KEY: ${{secrets.ALGOLIA_ADMIN_KEY}}
-  ALGOLIA_INDEX_NAME: content 
-  ALGOLIA_INDEX_FILE: public/algolia.json
-  HUGO_SALT: ${{secrets.HUGO_SALT}}
-
 
 jobs:
   build:
@@ -26,7 +19,6 @@ jobs:
         with:
           hugo-version: '0.101.0'
           extended: true
-      - run: npm ci
-      - run: npm run build
-      - run: npm run algolia
-      - run: npm run deploy
+      - run: bun install
+      - run: bun run build
+      - run: bun run deploy
