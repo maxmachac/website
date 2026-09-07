@@ -3,6 +3,9 @@ languageCode = 'en-us'
 title = 'maxblog'
 enableRobotsTXT = true
 
+[caches.images]
+    dir = ':cacheDir/images'
+
 [outputs]
 home = ["HTML", "RSS"]
 
