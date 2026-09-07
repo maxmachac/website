@@ -13,10 +13,10 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-      - uses: peaceiris/actions-hugo@v3
+      - uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: latest
           extended: true
       - run: bun ci
       - run: bun run build
-      - run: hugo --minify
+      - run: hugo start
