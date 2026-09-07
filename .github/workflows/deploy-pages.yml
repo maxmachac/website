@@ -17,5 +17,6 @@ jobs:
         with:
           hugo-version: latest
           extended: true
-      - run: bun install
+      - run: bun ci
       - run: bun run build
+      - run: hugo --minify

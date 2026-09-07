@@ -1,5 +1,5 @@
 // Global code
-import '../styles/app.css';
+import '../styles/app.scss';
 import flamethrower from 'flamethrower-router';
 import { scrollSave } from './util/scroll';
 import './util/key-bindings';
