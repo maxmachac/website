@@ -19,4 +19,4 @@ jobs:
           extended: true
       - run: bun ci
       - run: bun run build
-      - run: hugo server
+      - run: hugo --minify
