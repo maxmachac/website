@@ -18,23 +18,23 @@
     {{- $title := partial "title" . -}}
     <title>{{ $title }}</title>
 
-    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/svelte/{{ .Site.Data.svelte.css }}" />
-    <script type="module" defer src="/svelte/{{ .Site.Data.svelte.js }}" /></script>
+    <link rel="shortcut icon" href="{{ "img/favicon.png" | relURL }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ printf "svelte/%s" .Site.Data.svelte.css | relURL }}" />
+    <script type="module" defer src="{{ printf "svelte/%s" .Site.Data.svelte.js | relURL }}" /></script>
 
     <!-- pwa -->
-    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <link rel="shortcut icon" href="{{ "img/favicon.png" | relURL }}" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{{ "img/favicon.png" | relURL }}" />
     <meta name="theme-color" content="#454e56">
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="google-site-verification" content="_5hRPKIH1p5wVuCARFwrx1gaayOye8P6EZV8cNmiu5I" />
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="{{ "manifest.json" | relURL }}">
     {{ partial "meta" . }}
     
     <script>
       if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
-              navigator.serviceWorker.register('/sw.js');
+              navigator.serviceWorker.register('{{ "sw.js" | relURL }}');
           });
       }
     </script>

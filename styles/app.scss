@@ -56,6 +56,16 @@ figure img {
     @apply grid grid-cols-1 auto-cols-max gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-none;
 }
 
+.tv-background {
+    background-image: none;
+}
+
+@media (min-width: 768px) {
+    .tv-background {
+        background-image: url('../img/tv.png');
+    }
+}
+
 video-player {
     iframe {
         position: absolute;

@@ -1,4 +1,4 @@
-name: Deploy-Pages
+name: Deploy Pages
 
 on:
   push:
@@ -8,10 +8,27 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-      - run: bun ci
+      - uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: latest
+          extended: true
+      - run: bun install --frozen-lockfile
       - run: bun run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+      - id: deployment
+        uses: actions/deploy-pages@v4

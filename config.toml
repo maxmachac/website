@@ -1,4 +1,4 @@
-baseURL = 'https://maxmachac.github.io/'
+baseURL = 'https://maxmachac.github.io/website/'
 languageCode = 'en-us'
 title = 'maxblog'
 enableRobotsTXT = true
