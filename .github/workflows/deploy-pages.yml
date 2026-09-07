@@ -13,7 +13,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-      - uses: peaceiris/actions-hugo@v2
+      - uses: peaceiris/actions-hugo@latest
         with:
           hugo-version: latest
           extended: true
