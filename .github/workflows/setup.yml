@@ -1,4 +1,4 @@
-name: Deploy Pages
+name: Setup js
 
 on:
   push:

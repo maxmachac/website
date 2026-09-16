@@ -18,7 +18,6 @@ d88P"  Y8P                          888      Y8P
 // Global code
 import '../styles/app.scss';
 import flamethrower from 'flamethrower-router';
-import { GAPageView, passwordlessSignin } from './util/firebase';
 import { scrollSave } from './util/scroll';
 import './util/key-bindings';
 
