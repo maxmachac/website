@@ -53,9 +53,6 @@ export * from './components/ui/discord-count.svelte';
 export * from './components/ui/scroll-up.svelte';
 export * from './components/ui/hi-mom.svelte';
 
-// Search
-export * from './components/search/algolia-search.svelte';
-
 // Video
 export * from './components/video/video-player.svelte';
 export * from './components/video/autoplay-toggle.svelte'; 
