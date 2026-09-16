@@ -16,7 +16,7 @@ d88P"  Y8P                          888      Y8P
 
 
 // Global code
-import '../styles/app.scss';
+import '../styles/app.css';
 import flamethrower from 'flamethrower-router';
 import { scrollSave } from './util/scroll';
 import './util/key-bindings';
