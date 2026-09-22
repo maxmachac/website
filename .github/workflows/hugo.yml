@@ -132,6 +132,7 @@ jobs:
         with:
           include-hidden-files: false
           path: ./public
+  
   deploy:
     runs-on: ubuntu-latest
     needs: build

@@ -6,6 +6,7 @@
     "type": "module",
     "scripts": {
       "dev": "vite",
+      "test": "bun test",
       "hugo": "hugo server --forceSyncStatic --port 6969",
       "start": "concurrently \"vite build --watch\" \"bun run hugo\"",
       "vbuild": "vite build",
