@@ -141,7 +141,11 @@ jobs:
     steps:
       - name: Test
         id: testinf
-        uses: actions/deploy-pages@v5
+        uses: oven-sh/bun@v2
+        with:
+          bun-version: latest
+
+      run: bun run test
   deploy:
     runs-on: ubuntu-latest
     needs: build

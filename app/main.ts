@@ -29,36 +29,9 @@ export const router = flamethrower({ prefetch: 'hover', log: false });
 
 
 // All web components must be exported here
-export * from './components/global-data.svelte';
 
-// User state
-export * from './components/users/user-data.svelte';
-export * from './components/users/if-pro.svelte';
-export * from './components/users/if-user.svelte';
-export * from './components/users/if-access.svelte';
-export * from './components/users/user-avatar.svelte';
-
-// Progress Tracking
-export * from './components/progress/complete-icon.svelte';
 
 // UI
-export * from './components/ui/modal-action.svelte';
-export * from './components/ui/modal-dialog.svelte';
-export * from './components/ui/route-loader.svelte';
-export * from './components/ui/toast-message.svelte';
-export * from './components/ui/navbar-toggle.svelte';
-export * from './components/ui/img-reveal.svelte';
-export * from './components/ui/scroll-show.svelte';
-export * from './components/ui/discord-count.svelte';
-export * from './components/ui/scroll-up.svelte';
+export * from './components/ui/layer.svelte';
 export * from './components/ui/hi-mom.svelte';
 
-// Video
-export * from './components/video/video-player.svelte';
-export * from './components/video/autoplay-toggle.svelte'; 
-
-export * from './components/payments/price-select.svelte';
-
-
-// Shared
-export * from './components/ui/loading-spinner.svelte';
