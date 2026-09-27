@@ -1,8 +1,5 @@
 <svelte:options tag="add-layer" />
 
-<script lang="ts">
-</script>
-
 <div class="layer-container">
   <div class="layer">
     <slot />
@@ -12,9 +9,13 @@
 
 <style>
   .layer-container {
+    margin: 1%;
     position: relative;
     display: inline-block;
-    width: 100%;
+    width: 98%;
+    
+    --layer-color: gray;
+    --shade-color: color-mix(in srgb, var(--layer-color), black 60%);
   }
 
   .layer {
@@ -24,12 +25,12 @@
     padding: 20px;
     border-radius: 15px;
     color: white;
-    background-color: black;
+    background-color: var(--layer-color);
     transition: all 0.025s ease-in-out;
   }
 
   .layer:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 
   .layer:active {
@@ -42,7 +43,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--shade-color);
     border-radius: 15px;
     z-index: -1;
     pointer-events: none;

@@ -1,3 +1,28 @@
-.test {
-    color: red;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --1: 8px;
+    --2: var(--1) * 2;
+    --3: var(--2) * 2;
+    --4: var(--3) * 2;
+    --5: var(--4) * 2;
+    --6: var(--5) * 2;
+    --8: var(--6) * 2;
+    --10: var(--8) * 2;
+    --12: var(--10) * 2;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1%;
+    max-width: 1200px;
+    margin: 1%;
 }

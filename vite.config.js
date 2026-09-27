@@ -15,9 +15,6 @@ export default defineConfig({
     assetsDir: '',
     // sourcemap: 'inline', // enable for debugging
   },
-  server: {
-    port: 4200,
-  },
   plugins: [
     svelte({
       compilerOptions: {
