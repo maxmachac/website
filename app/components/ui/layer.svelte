@@ -9,12 +9,8 @@
 
 <style>
   .layer-container {
-    margin: 1%;
     position: relative;
     display: inline-block;
-    width: 98%;
-    
-    --layer-color: gray;
     --shade-color: color-mix(in srgb, var(--layer-color), black 60%);
   }
 
