@@ -10,10 +10,10 @@ export const router = flamethrower({ prefetch: 'hover', log: false });
 
 // UI
 export * from './components/ui/layer.svelte';
-export * from './components/ui/container.svelte';
+export * from './components/ui/headder.svelte'
 // Sections
 export * from './components/sections/hero.svelte';
-//Head
-export * from './components/head.svelte';
-export * from './components/meta.svelte';
+// Pages
+export * from './components/pages/main.svelte'
+
 

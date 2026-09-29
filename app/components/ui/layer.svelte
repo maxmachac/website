@@ -10,37 +10,43 @@
 <style>
   .layer-container {
     position: relative;
-    display: inline-block;
+    display: block;
+    width: 100%;
+    --layer-color: #6ebe23;
     --shade-color: color-mix(in srgb, var(--layer-color), black 60%);
+    isolation: isolate;
   }
 
   .layer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
     border-radius: 15px;
     color: white;
     background-color: var(--layer-color);
     transition: all 0.025s ease-in-out;
   }
 
-  .layer:hover {
-    transform: translateY(-3px);
+   .layer:hover {
+    transform: translateY(-0px);
   }
 
   .layer:active {
-    transform: translateY(10px);
+    transform: translate(10px, 10px);
   }
 
   .shade {
     position: absolute;
     top: 10px;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    transform: translate(-9.75px, -9.75px);
+    left: 10px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
     background-color: var(--shade-color);
-    border-radius: 15px;
+    border-radius: 17.5px;
     z-index: -1;
     pointer-events: none;
   }
