@@ -6,7 +6,7 @@
     <div id="text">
       <h1 id="hero-section">Hi I'm Max</h1>
       <p>
-        I'am Frontend dev using this techstack:
+        I'am FrontEnd DEV using this techstack:
       </p>
       <ul>
         <li>React.js</li>
