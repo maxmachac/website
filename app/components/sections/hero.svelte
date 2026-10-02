@@ -2,7 +2,7 @@
 
 <section id="hero" aria-labelledby="hero-section">
   <div id="hero-content">
-    <img id="image" src="/app/assets/me.jpg" alt="Hero Image" />
+    <img id="image" src="website/app/assets/me.jpg" alt="Hero Image" />
     <div id="text">
       <h1 id="hero-section">Hi I'm Max</h1>
       <p>
