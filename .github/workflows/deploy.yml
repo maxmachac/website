@@ -1,4 +1,4 @@
-name: Setup js
+name: Deploy
 
 on:
   push:
