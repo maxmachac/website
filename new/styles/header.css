@@ -1,0 +1,19 @@
+header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    height: var(--6);
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--background);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    border-bottom: 1px solid var(--line);
+}
+
+header h1 {
+    margin: 0;
+}
