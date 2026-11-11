@@ -1,0 +1,46 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Size Variables */
+:root {
+  --1: 2px;
+  --2: calc(var(--1) * 2);
+  --3: calc(var(--2) * 2);
+  --4: calc(var(--3) * 2);
+  --5: calc(var(--4) * 2);
+  --6: calc(var(--5) * 2);
+  --7: calc(var(--6) * 2);
+  --8: calc(var(--7) * 2);
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: var(--2);
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.visible-box {
+  background-color: #b7e4c7;
+  grid-column: 1;
+  width: 100%;
+}
+
+.second-box {
+  background-color: #f4a261;
+  grid-column: 2;
+}
