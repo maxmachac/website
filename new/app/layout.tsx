@@ -1,8 +1,8 @@
-import type { Metadata } from "next"
-import Wrapper from "@/features/navigation/components/wrapper";
+import type { Metadata } from "next";
+import Header from "../features/navigation/components/header";
+import Footer from "../features/navigation/components/footer";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,9 +25,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body>
-        <Wrapper>
-          {children}
-        </Wrapper>
+        <Header />
+          <div className="main-container">
+            {children}
+          </div>
+        <Footer />
       </body>
     </html>
   );

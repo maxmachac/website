@@ -7,6 +7,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --hover: #a3a3a3;
+  --line: #e5e5e5;
 }
 
 /* Dark Mode */
@@ -15,6 +17,7 @@
     --background: #0a0a0a;
     --foreground: #ededed;
     --line: oklch(35% 0 271);
+    --hover: oklch(60% 0 271);
   }
 }
 
@@ -31,6 +34,8 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
@@ -40,19 +45,7 @@ body {
 
 .main-container {
   display: grid;
-  min-height: 100vh;
-  box-sizing: border-box;
-  grid-template-columns: repeat(10, minmax(0, 1fr));
+  flex: 1;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--2);
-}
-
-.visible-box {
-  background-color: #b7e4c7;
-  grid-column: 1;
-  width: 100%;
-}
-
-.second-box {
-  background-color: #f4a261;
-  grid-column: 2;
 }
